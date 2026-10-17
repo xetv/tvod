@@ -5,5 +5,6 @@
     <string name="settings_hint">Tekan OK untuk mencentang / membatalkan. Pilihan tersimpan otomatis.</string>
     <string name="picker_title">Buka aplikasi</string>
     <string name="empty_hint">Belum ada aplikasi yang dipilih. Centang dulu di pengaturan.</string>
+    <string name="open_settings">Atur daftar aplikasi...</string>
     <string name="launch_failed">Gagal membuka aplikasi</string>
 </resources>

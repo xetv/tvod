@@ -23,24 +23,22 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme">
 
-        <!-- Halaman pengaturan: muncul di menu TV -->
+        <!-- Halaman pengaturan: dibuka dari dalam dialog (item terakhir) -->
         <activity
             android:name=".SettingsActivity"
-            android:exported="true">
+            android:exported="false" />
+
+        <!-- Satu-satunya pintu masuk launcher: langsung menampilkan dialog pemilih -->
+        <activity
+            android:name=".PickerActivity"
+            android:exported="true"
+            android:excludeFromRecents="true"
+            android:theme="@style/PickerTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LEANBACK_LAUNCHER" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-
-        <!-- Dialog pemilih: target tombol TVOD di Button Mapper (tanpa ikon launcher) -->
-        <activity
-            android:name=".PickerActivity"
-            android:exported="true"
-            android:excludeFromRecents="true"
-            android:taskAffinity=""
-            android:theme="@style/PickerTheme">
             <intent-filter>
                 <action android:name="com.example.tvodpicker.SHOW" />
                 <category android:name="android.intent.category.DEFAULT" />
