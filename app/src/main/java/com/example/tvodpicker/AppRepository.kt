@@ -21,7 +21,9 @@ object AppRepository {
                     ?: pm.getLaunchIntentForPackage(pkg)
                     ?: continue
                 launch.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
-                result[pkg] = AppInfo(ri.loadLabel(pm).toString(), pkg, ri.loadIcon(pm), launch)
+                val original = ri.loadLabel(pm).toString()
+                val shown = getCustomLabel(context, pkg) ?: original
+                result[pkg] = AppInfo(shown, pkg, ri.loadIcon(pm), launch, original)
             }
         }
         return result.values.sortedBy { it.label.lowercase() }
@@ -34,5 +36,16 @@ object AppRepository {
     fun setSelected(context: Context, packages: Set<String>) {
         context.getSharedPreferences(PREFS, Context.MODE_PRIVATE)
             .edit().putStringSet(KEY_SELECTED, packages.toSet()).apply()
+    }
+
+    fun getCustomLabel(context: Context, pkg: String): String? =
+        context.getSharedPreferences(PREFS, Context.MODE_PRIVATE)
+            .getString("label_$pkg", null)?.takeIf { it.isNotBlank() }
+
+    /** Isi kosong atau null = kembali ke nama asli. */
+    fun setCustomLabel(context: Context, pkg: String, label: String?) {
+        val e = context.getSharedPreferences(PREFS, Context.MODE_PRIVATE).edit()
+        if (label.isNullOrBlank()) e.remove("label_$pkg") else e.putString("label_$pkg", label.trim())
+        e.apply()
     }
 }

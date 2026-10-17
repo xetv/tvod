@@ -2,9 +2,12 @@
 <resources>
     <string name="app_name">TVOD Picker</string>
     <string name="settings_title">Pilih aplikasi untuk tombol TVOD</string>
-    <string name="settings_hint">Tekan OK untuk mencentang / membatalkan. Pilihan tersimpan otomatis.</string>
+    <string name="settings_hint">Tekan OK untuk mencentang. Tahan OK (tekan lama) untuk mengganti nama tampilan.</string>
     <string name="picker_title">Buka aplikasi</string>
     <string name="empty_hint">Belum ada aplikasi yang dipilih. Centang dulu di pengaturan.</string>
     <string name="open_settings">Atur daftar aplikasi...</string>
     <string name="launch_failed">Gagal membuka aplikasi</string>
+    <string name="rename_title">Ganti nama: %1$s</string>
+    <string name="save">Simpan</string>
+    <string name="reset">Kembalikan</string>
 </resources>

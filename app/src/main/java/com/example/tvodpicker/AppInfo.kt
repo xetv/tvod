@@ -7,5 +7,6 @@ data class AppInfo(
     val label: String,
     val packageName: String,
     val icon: Drawable,
-    val launchIntent: Intent
+    val launchIntent: Intent,
+    val originalLabel: String = label
 )
