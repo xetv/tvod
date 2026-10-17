@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">TVOD Picker</string>
+    <string name="settings_title">Pilih aplikasi untuk tombol TVOD</string>
+    <string name="settings_hint">Tekan OK untuk mencentang / membatalkan. Pilihan tersimpan otomatis.</string>
+    <string name="picker_title">Buka aplikasi</string>
+    <string name="empty_hint">Belum ada aplikasi yang dipilih. Centang dulu di pengaturan.</string>
+    <string name="launch_failed">Gagal membuka aplikasi</string>
+</resources>
